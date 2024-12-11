@@ -1,3 +1,3 @@
-# Boilerplate
+# Helper
 
 Template for Bojaghi project.
