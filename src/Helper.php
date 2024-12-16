@@ -24,4 +24,32 @@ class Helper
 
         return $output;
     }
+
+    /**
+     * Separates an input array into two arrays: one associative array and the other indexed array.
+     *
+     * @param array $input The input array to be separated.
+     *
+     * @return array An array containing two sub-arrays:
+     *                the first with associative elements, and the second with numeric-indexed values.
+     */
+    public static function separateArray(array $input): array
+    {
+        $associative = [];
+        $indexed     = [];
+        $index       = 0;
+
+        foreach ($input as $key => $value) {
+            if (is_int($key) && $index === $key) {
+                $indexed[$index++] = $value;
+            } else {
+                $associative[$key] = $value;
+            }
+        }
+
+        return [
+            $associative,
+            array_values($indexed),
+        ];
+    }
 }
