@@ -4,8 +4,151 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e864e43dc7a59aaab9ba41873693aad",
-    "packages": [],
+    "content-hash": "8dbac13880e409283d40b15564c794c0",
+    "packages": [
+        {
+            "name": "bojaghi/continy",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bojaghi/continy.git",
+                "reference": "9adc5c5740887a66da8a52e9e6ada53fe26e3016"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bojaghi/continy/zipball/9adc5c5740887a66da8a52e9e6ada53fe26e3016",
+                "reference": "9adc5c5740887a66da8a52e9e6ada53fe26e3016",
+                "shasum": ""
+            },
+            "require": {
+                "bojaghi/contract": "^1.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "bojaghi/wp-tests": "^1.0",
+                "phpunit/phpunit": "^9",
+                "yoast/phpunit-polyfills": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bojaghi\\Continy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "changwoo",
+                    "email": "ep6tri@hotmail.com"
+                }
+            ],
+            "description": "Re-usable tiny container for WordPress themes and plugins.",
+            "homepage": "https://github.com/bojaghi/continy",
+            "support": {
+                "issues": "https://github.com/bojaghi/continy/issues",
+                "source": "https://github.com/bojaghi/continy/tree/1.1.4"
+            },
+            "time": "2025-05-05T12:34:49+00:00"
+        },
+        {
+            "name": "bojaghi/contract",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bojaghi/contract.git",
+                "reference": "6d0fd73087a7f36cea92fee0c110af0916f5f1db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bojaghi/contract/zipball/6d0fd73087a7f36cea92fee0c110af0916f5f1db",
+                "reference": "6d0fd73087a7f36cea92fee0c110af0916f5f1db",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0",
+                "psr/container": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bojaghi\\Contract\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "changwoo",
+                    "email": "ep6tri@hotmail.com"
+                }
+            ],
+            "description": "Bojaghi contract",
+            "homepage": "https://github.com/bojaghi/contract",
+            "support": {
+                "issues": "https://github.com/bojaghi/contract/issues",
+                "source": "https://github.com/bojaghi/contract/tree/1.1.0"
+            },
+            "time": "2024-12-21T04:43:53+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/2.0.2"
+            },
+            "time": "2021-11-05T16:47:00+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "bojaghi/wp-tests",
