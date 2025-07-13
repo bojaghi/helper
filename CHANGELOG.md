@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.3.0
+
+2025-07-13
+
+- Add Facades::parseCallback(). The method from 'bojaghi/admin-ajax'.
+
 ## 1.2.0
 
 2025-06-03
