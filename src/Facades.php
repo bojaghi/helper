@@ -2,25 +2,33 @@
 
 namespace Bojaghi\Helper;
 
-use Bojaghi\Continy\Continy;
-use Bojaghi\Continy\ContinyException;
-use Bojaghi\Continy\ContinyFactory;
-use Bojaghi\Continy\ContinyNotFoundException;
-use Psr\Container\ContainerExceptionInterface;
+use Bojaghi\Contract\Container;
+use Bojaghi\Contract\ContinyFactory;
+use Exception;
+use Throwable;
 
 /**
  * These static methods are very frequently used if you are using continy as your container.
  */
 class Facades
 {
-    public static function container(array|string $config = ''): Continy
+    /**
+     * @param array|string                 $config
+     * @param class-string<ContinyFactory> $continyFactoryClass
+     *
+     * @return Container
+     */
+    public static function container(array|string $config = '', string $continyFactoryClass = ''): Container
     {
         static $continy = null;
 
         if (is_null($continy)) {
             try {
-                $continy = ContinyFactory::create($config);
-            } catch (ContinyException $e) {
+                if (!in_array(ContinyFactory::class, class_implements($continyFactoryClass), true)) {
+                    throw new Exception('The class ' . $continyFactoryClass . ' must implement ' . ContinyFactory::class);
+                }
+                $continy = $continyFactoryClass::create($config);
+            } catch (Throwable $e) {
                 wp_die($e->getMessage());
             }
         }
@@ -39,7 +47,7 @@ class Facades
     {
         try {
             $instance = self::container()->get($id, $constructorCall);
-        } catch (ContinyException $_) {
+        } catch (Throwable $_) {
             return null;
         }
 
@@ -60,10 +68,10 @@ class Facades
             $container = self::container();
             $instance  = $container->get($id);
             if (!$instance) {
-                throw new ContinyNotFoundException("Instance $id not found");
+                throw new Exception("Instance $id not found");
             }
             return $container->call([$instance, $method], $args);
-        } catch (ContinyException $e) {
+        } catch (Throwable $e) {
             wp_die($e->getMessage());
         }
     }
