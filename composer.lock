@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d03bd3187f5ee5f24157ba997914c68",
+    "content-hash": "bf5a51b6ee5f948e06d70f69fd11f7a9",
     "packages": [
         {
             "name": "bojaghi/contract",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bojaghi/contract.git",
-                "reference": "de7bc90afcb4e6e959334200d140dfe1eefea771"
+                "reference": "28b57b4b66e209d0f869a70000ae49e6007ae539"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bojaghi/contract/zipball/de7bc90afcb4e6e959334200d140dfe1eefea771",
-                "reference": "de7bc90afcb4e6e959334200d140dfe1eefea771",
+                "url": "https://api.github.com/repos/bojaghi/contract/zipball/28b57b4b66e209d0f869a70000ae49e6007ae539",
+                "reference": "28b57b4b66e209d0f869a70000ae49e6007ae539",
                 "shasum": ""
             },
             "require": {
@@ -47,9 +47,9 @@
             "homepage": "https://github.com/bojaghi/contract",
             "support": {
                 "issues": "https://github.com/bojaghi/contract/issues",
-                "source": "https://github.com/bojaghi/contract/tree/1.2.0"
+                "source": "https://github.com/bojaghi/contract/tree/1.3.0"
             },
-            "time": "2025-07-14T05:34:09+00:00"
+            "time": "2025-07-14T06:17:53+00:00"
         },
         {
             "name": "psr/container",

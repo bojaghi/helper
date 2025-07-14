@@ -78,42 +78,6 @@ class Facades
 
     public static function parseCallback(string|array|callable $callback): callable|null
     {
-        if (is_callable($callback)) {
-            return $callback;
-        }
-
-        if (is_string($callback) && str_contains($callback, '@')) {
-            $split = explode('@', $callback, 2);
-        } else {
-            // array.
-            $split = $callback;
-        }
-
-        if (2 === count($split)) {
-            // 'foo@bar' style.
-            $cls    = $split[0];
-            $method = $split[1];
-
-            if (class_exists($cls) && method_exists($cls, $method)) {
-                if (is_callable([$cls, $method])) {
-                    // Static methods.
-                    return [$cls, $method];
-                }
-                // Common methods, the class needs to be instantiated,
-                // Or $cls may be an alias for the container.
-                $instance = static::get($cls);
-                if (is_callable([$instance, $method])) {
-                    return [$instance, $method];
-                }
-            }
-        } elseif (1 === count($split)) {
-            // It may be a class name, a container alias.
-            $instance = static::get($split[0]);
-            if (is_callable($instance)) {
-                return $instance;
-            }
-        }
-
-        return null;
+        return static::container()->parseCallback($callback);
     }
 }

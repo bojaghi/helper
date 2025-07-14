@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.4.1
+
+2025-07-14
+
+- Update `Facade::parseCallback`
+
 ## 1.4.0
 
 2025-07-14
