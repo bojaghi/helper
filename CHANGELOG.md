@@ -1,10 +1,16 @@
 # CHANGELOG
 
+## 1.4.2
+
+2025-07-18
+
+- Fix `Facades::get()` parameter type hint.
+
 ## 1.4.1
 
 2025-07-14
 
-- Update `Facade::parseCallback`
+- Update `Facades::parseCallback`.
 
 ## 1.4.0
 

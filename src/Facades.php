@@ -39,11 +39,17 @@ class Facades
     /**
      * @template T
      * @param class-string<T> $id
-     * @param bool            $constructorCall
+     * @param callable|false  $constructorCall Parameter of the callback:
+     *                                         - 0th: continy instance
+     *                                         - 1st: FQCN string of $id
+     *                                         - 2nd: raw $id string
+     *                                         Return of the callback: $id's real instance
      *
      * @return T|object|null
+     * @see    Continy::instantiate()
+     * @sample $this->get('myThing', function ($continy, $className, $id) { return new $className(); });
      */
-    public static function get(string $id, bool $constructorCall = false)
+    public static function get(string $id, callable|false $constructorCall = false)
     {
         try {
             $instance = self::container()->get($id, $constructorCall);
